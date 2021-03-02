@@ -13,10 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChattingApp">
-        <activity android:name=".ResetPasswordActivity"
-            android:parentActivityName=".LoginActivity"></activity>
-        <activity android:name=".MessageActivity" />
-        <activity android:name=".StartActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,14 +21,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegisterActivity"
-            android:parentActivityName=".StartActivity" />
+            android:name=".ResetPasswordActivity"
+            android:parentActivityName=".LoginActivity" />
+        <activity android:name=".MessageActivity" />
+        <activity android:name=".StartActivity"></activity>
+        <activity android:name=".RegisterActivity" android:parentActivityName=".StartActivity" />
         <activity android:name=".MainActivity" />
-        <activity
-            android:name=".LoginActivity"
-            android:parentActivityName=".StartActivity" />
-
-
+        <activity android:name=".LoginActivity" android:parentActivityName=".StartActivity" />
     </application>
 
 </manifest>

@@ -103,6 +103,11 @@ public class MainActivity extends AppCompatActivity {
                 //change finish supaya app tidak crash
                 startActivity(new Intent(MainActivity.this, StartActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 return true;
+            case R.id.aboutUs:
+                //change finish supaya app tidak crash
+                startActivity(new Intent(MainActivity.this, AboutUsActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                finish();
+                break;
         }
 
         return false;

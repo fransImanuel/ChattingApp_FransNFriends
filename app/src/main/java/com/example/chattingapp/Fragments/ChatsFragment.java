@@ -27,7 +27,7 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import java.util.ArrayList;
 import java.util.List;
 
-//test
+//test fransnfriends
 
 public class ChatsFragment extends Fragment {
 

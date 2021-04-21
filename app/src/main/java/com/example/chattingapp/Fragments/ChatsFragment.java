@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //test fransnfriends
-//test dari branch cindy
+//test dari branch frans
 
 public class ChatsFragment extends Fragment {
 

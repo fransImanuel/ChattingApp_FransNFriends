@@ -85,8 +85,6 @@ public class ProfileFragment extends Fragment {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-
-
         });
 
         image_profile.setOnClickListener(new View.OnClickListener() {

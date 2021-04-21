@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/toolbar"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/dimblack"
             android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
             app:popupTheme="@style/MenuStyle">
 
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:gravity="start"
-            android:hint="Type a massage..."
+            android:hint="Type a message..."
             app:layout_constraintBottom_toBottomOf="@+id/btn_send"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/btn_send" />

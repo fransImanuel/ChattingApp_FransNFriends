@@ -10,4 +10,8 @@
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#3578f5</color>
     <color name="colorAccent">#3578f5</color>
+    <color name="green">#C9E265</color>
+    <color name="yellow">#FFDE59</color>
+    <color name="orange">#FF914D</color>
+    <color name="dimblack">#434343</color>
 </resources>

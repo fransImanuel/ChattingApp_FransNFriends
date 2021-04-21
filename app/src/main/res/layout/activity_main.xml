@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/toolbar"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/dimblack"
             android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
             app:popupTheme="@style/MenuStyle">
 
@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/tab_layout"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/dimblack"
             app:tabSelectedTextColor="#fff"
             app:tabIndicatorColor="#fff"
             app:tabTextColor="#fff"/>

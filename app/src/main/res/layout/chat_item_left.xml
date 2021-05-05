@@ -29,7 +29,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:fontFamily="@font/alef_bold"
             android:background="@drawable/background_left"
             android:padding="8dp"
             android:text="Hello"

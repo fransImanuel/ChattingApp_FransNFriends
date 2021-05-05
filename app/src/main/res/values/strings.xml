@@ -2,4 +2,37 @@
     <string name="app_name">ChattingApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Start Activity -->
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+
+    <!-- Forgot Password -->
+    <string name="forgotpassword">Forgot Your Password?</string>
+    <string name="resetpassword">Reset Password</string>
+    <string name="resetbtn">Reset</string>
+
+    <!-- Register -->
+    <string name="newaccount">Create a New Account</string>
+
+    <!-- Login -->
+    <string name="welcomeback">Welcome Back!</string>
+
+    <!-- Profile -->
+    <string name="profile">Profile</string>
+
+    <!-- About Us -->
+    <string name="aboutus">Talky is android application created for fulfill Mobile Application Programming subject with our beloved lecturer and laboratory assistant which is Alexander Waworuntu and James Wira</string>
+
+    <string name="Frans">Frans Imanuel</string>
+    <string name="FransNIM">00000028631</string>
+
+    <string name="Ryan">A.G.R.F Dewa</string>
+    <string name="RyanNIM">00000029072</string>
+
+    <string name="Juan">Juan Daniel</string>
+    <string name="JuanNIM">00000029177</string>
+
+    <string name="Cindy">Cindy Aristawati</string>
+    <string name="CindyNIM">00000028897</string>
 </resources>

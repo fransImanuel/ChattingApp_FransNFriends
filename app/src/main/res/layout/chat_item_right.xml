@@ -30,7 +30,7 @@
             android:padding="8dp"
             android:text="Hello"
             android:textColor="@color/white"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/dimblack"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@id/cir_parent"
             app:layout_constraintEnd_toEndOf="@+id/cir_parent"

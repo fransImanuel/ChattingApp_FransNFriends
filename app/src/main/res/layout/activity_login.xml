@@ -1,71 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".LoginActivity">
-
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/bar_layout"/>
-
-    <LinearLayout
+    android:layout_height="wrap_content">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center_horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        android:padding="16dp">
+        tools:context=".LoginActivity">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/bar_layout"/>
 
-        <com.rengwuxian.materialedittext.MaterialEditText
+        <LinearLayout
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/email"
-            android:inputType="textEmailAddress"
-            android:layout_marginTop="10dp"
-            app:met_floatingLabel="normal"
-            android:hint="Email"/>
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            android:padding="16dp">
 
-        <com.rengwuxian.materialedittext.MaterialEditText
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alef_bold"
+                android:layout_marginTop="15dp"
+                android:text="@string/welcomeback"
+                android:textSize="26sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/password"
-            android:inputType="textPassword"
-            android:layout_marginTop="10dp"
-            app:met_floatingLabel="normal"
-            android:hint="Password"/>
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            android:padding="16dp">
 
-        <Button
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:srcCompat="@drawable/talkylogolight" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Log in"
-            android:id="@+id/btn_login"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:layout_marginTop="10dp"
-            android:textColor="#fff"
-            />
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            android:padding="16dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Forgot Your Password?"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:id="@+id/forgot_password"
-            android:textColor="@color/colorPrimaryDark"
-            android:gravity="center"
-            android:layout_gravity="end"
-            />
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/email"
+                android:inputType="textEmailAddress"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                app:met_floatingLabel="normal"
+                android:hint="Email"/>
 
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/password"
+                android:inputType="textPassword"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                app:met_floatingLabel="normal"
+                android:hint="Password"/>
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/green"
+                android:text="@string/login"
+                android:textColor="#fff"
+                />
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:textStyle="bold"
+                android:id="@+id/forgot_password"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alef_bold"
+                android:text="@string/forgotpassword"
+                android:textSize="12sp"
+                />
+        </LinearLayout>
 
     </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

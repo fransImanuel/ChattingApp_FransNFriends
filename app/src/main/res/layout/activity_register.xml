@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".RegisterActivity">
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/bar_layout"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/newaccount"
+            android:fontFamily="@font/alef_bold"
+            android:layout_marginTop="15dp"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,13 +43,21 @@
         android:gravity="center_horizontal"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         android:padding="16dp">
-        
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Create a new account"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
+
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:srcCompat="@drawable/talkylogolight" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:padding="16dp">
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
@@ -31,6 +65,8 @@
             android:id="@+id/username"
             android:layout_marginTop="10dp"
             app:met_floatingLabel="normal"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
             android:hint="Username"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText
@@ -40,6 +76,8 @@
             android:inputType="textEmailAddress"
             android:layout_marginTop="10dp"
             app:met_floatingLabel="normal"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
             android:hint="Email"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText
@@ -49,21 +87,22 @@
             android:inputType="textPassword"
             android:layout_marginTop="10dp"
             app:met_floatingLabel="normal"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
             android:hint="Password"/>
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Register"
             android:id="@+id/btn_register"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:layout_marginTop="10dp"
-            android:textColor="#fff"/>
-
-
-
-
+            android:layout_marginTop="26dp"
+            android:layout_gravity="center"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/yellow"
+            android:text="@string/register"
+            android:textColor="#fff"
+            />
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
+</ScrollView>

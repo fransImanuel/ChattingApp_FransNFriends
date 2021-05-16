@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -120,11 +121,12 @@ public class UsersFragment extends Fragment {
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         User user = snapshot.getValue(User.class);
 
-                        assert user != null;
-                        assert firebaseUser != null;
+                        Log.d("WOI", user.getId());
+
                         if (!user.getId().equals(firebaseUser.getUid())) {
                             mUsers.add(user);
                         }
+
                     }
 
                     userAdapter = new UserAdapter(getContext(), mUsers, false);
@@ -133,7 +135,7 @@ public class UsersFragment extends Fragment {
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });

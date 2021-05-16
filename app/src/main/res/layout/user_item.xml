@@ -20,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
+        android:fontFamily="@font/alef_bold"
         android:text="username"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/profile_image"

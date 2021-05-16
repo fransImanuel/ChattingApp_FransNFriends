@@ -7,15 +7,38 @@
     android:layout_height="match_parent"
     tools:context=".SplashActivity"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@drawable/border">
+
 
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:id="@+id/imageView11"
+        android:layout_width="363dp"
+        android:layout_height="688dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bg_logo" />
+
+    <ImageView
+        android:id="@+id/TextTalky"
+        android:layout_width="219dp"
+        android:layout_height="89dp"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LogoTalky"
+        app:srcCompat="@drawable/kata"/>
+
+    <ImageView
+        android:id="@+id/LogoTalky"
+        android:layout_width="243dp"
+        android:layout_height="226dp"
         app:layout_constraintBottom_toTopOf="@+id/progressBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.597"
         app:srcCompat="@drawable/talky_logo" />
 
     <ProgressBar
@@ -26,7 +49,9 @@
         android:indeterminateDrawable="@drawable/pb_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.615" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

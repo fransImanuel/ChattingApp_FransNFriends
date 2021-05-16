@@ -1,23 +1,34 @@
 package com.example.chattingapp.Fragments;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.chattingapp.MainActivity;
 import com.example.chattingapp.Model.User;
 import com.example.chattingapp.R;
 import com.google.android.gms.tasks.Continuation;
@@ -36,6 +47,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -46,6 +59,7 @@ public class ProfileFragment extends Fragment {
 
     CircleImageView image_profile;
     TextView username;
+    Button storage_img,camera_img;
 
     DatabaseReference reference;
     FirebaseUser fuser;
@@ -55,6 +69,9 @@ public class ProfileFragment extends Fragment {
     private Uri imageUri;
     private StorageTask uploadTask;
 
+    private int PERMISSION_CAMERA = 20;
+    private int ACCESS_CAMERA = 40;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -62,6 +79,8 @@ public class ProfileFragment extends Fragment {
 
         image_profile = view.findViewById(R.id.profile_image);
         username = view.findViewById(R.id.username);
+        storage_img = view.findViewById(R.id.storage_img);
+        camera_img = view.findViewById(R.id.camera_img);
 
         storageReference = FirebaseStorage.getInstance().getReference("uploads/foto");
 
@@ -87,10 +106,24 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        image_profile.setOnClickListener(new View.OnClickListener() {
+        storage_img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openImage();
+            }
+        });
+
+        camera_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_CAMERA);
+                if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions((Activity)getContext(), new String[]{Manifest.permission.CAMERA}, PERMISSION_CAMERA);
+                }else{
+                    Intent intent = new Intent();
+                    intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(intent, ACCESS_CAMERA);
+                }
             }
         });
 
@@ -164,7 +197,7 @@ public class ProfileFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null){
-            imageUri =data.getData();
+            imageUri = data.getData();
 
             if (uploadTask != null && uploadTask.isInProgress()){
                 Toast.makeText(getContext(), "Upload in Progress", Toast.LENGTH_SHORT).show();
@@ -172,5 +205,34 @@ public class ProfileFragment extends Fragment {
                 uploadImage();
             }
         }
+
+        if (requestCode == ACCESS_CAMERA && resultCode == RESULT_OK){
+            Bundle extras = data.getExtras();
+            Log.d("PROFILE", "Bundle extras ="+extras);
+            Bitmap BitmapCamera = (Bitmap) extras.get("data");
+            Log.d("PROFILE", "Bitmap BitmapCamera ="+BitmapCamera);
+
+            // CALL THIS METHOD TO GET THE URI FROM THE BITMAP
+            Uri tempUri = getImageUri(getContext(), BitmapCamera);
+            Log.d("PROFILE", "Uri tempUri ="+BitmapCamera);
+            imageUri = tempUri;
+            uploadImage();
+        }
     }
+
+    public Uri getImageUri(Context inContext, Bitmap inImage) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
+        return Uri.parse(path);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == PERMISSION_CAMERA){
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CAMERA}, PERMISSION_CAMERA);
+        }
+    }
+
 }

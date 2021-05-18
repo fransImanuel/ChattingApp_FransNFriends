@@ -48,6 +48,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:19.6.0'
     implementation 'com.google.firebase:firebase-auth:20.0.2'
     implementation 'com.google.firebase:firebase-storage:19.2.1'
+
     //materialedittext
     'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'

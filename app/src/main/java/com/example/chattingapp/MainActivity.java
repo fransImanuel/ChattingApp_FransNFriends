@@ -99,9 +99,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.logout:
-                //change finish supaya app tidak crash
                 FirebaseAuth.getInstance().signOut();
-                System.exit(0);
+                //change finish supaya app tidak crash
+                startActivity(new Intent(MainActivity.this, SplashActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 return true;
             case R.id.aboutUs:
                 //change finish supaya app tidak crash

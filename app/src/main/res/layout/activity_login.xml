@@ -46,9 +46,10 @@
 
             <ImageView
                 android:layout_gravity="center_horizontal"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="200dp"
-                app:srcCompat="@drawable/talkylogolight" />
+                android:layout_marginBottom="20dp"
+                app:srcCompat="@drawable/talky_logo" />
         </LinearLayout>
 
         <LinearLayout

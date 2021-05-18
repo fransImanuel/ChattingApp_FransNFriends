@@ -26,6 +26,8 @@ public class StartActivity extends AppCompatActivity {
             Intent intent = new Intent(StartActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
+        }else{
+
         }
     }
 
@@ -50,5 +52,13 @@ public class StartActivity extends AppCompatActivity {
                 startActivity(new Intent(StartActivity.this, RegisterActivity.class));
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        finish();
+        System.exit(0);
     }
 }

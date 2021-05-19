@@ -33,7 +33,6 @@
         <activity
             android:name=".LoginActivity"
             android:parentActivityName=".StartActivity" />
-
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

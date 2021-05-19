@@ -2,6 +2,7 @@ package com.example.chattingapp.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import com.example.chattingapp.MessageActivity;
 import com.example.chattingapp.Model.Chat;
 import com.example.chattingapp.Model.User;
 import com.example.chattingapp.R;
+import com.example.chattingapp.StartActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -26,11 +28,14 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     private Context mContext;
     private List<User> mUsers;
     private boolean ischat;
+
 
     String theLastMessage;
 
@@ -118,6 +123,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                Log.d("LOGOUT", "logout-test="+FirebaseAuth.getInstance());
+
                  for (DataSnapshot snapshot1: snapshot.getChildren()){
                      Chat chat = snapshot1.getValue(Chat.class);
                      if (chat.getReceiver().equals(firebaseUser.getUid()) && chat.getSender().equals(userid) ||

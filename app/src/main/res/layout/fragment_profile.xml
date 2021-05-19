@@ -4,81 +4,91 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragments.ProfileFragment"
-    android:orientation="vertical"
-    android:padding="8dp">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_marginTop="10dp"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        android:padding="16dp">
+        android:layout_height="400dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/alef_bold"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="15dp"
-            android:text="@string/profile"
-            android:textSize="26sp"
-            android:textStyle="bold"/>
-    </LinearLayout>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
+            android:background="@drawable/gradient"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:id="@+id/test">
+            android:layout_height="350dp"
+            android:orientation="vertical">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="30dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="100dp"
+                android:layout_gravity="center"
                 android:src="@mipmap/ic_launcher"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/alef_bold"
-                android:text="username"
-                android:textColor="@color/dimblack"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:id="@+id/username"
-                app:layout_constraintEnd_toEndOf="@+id/profile_image"
-                app:layout_constraintStart_toStartOf="@+id/profile_image"
-                app:layout_constraintTop_toBottomOf="@+id/profile_image"
-                app:layout_constraintBottom_toBottomOf="@+id/test"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="5dp"
+        </LinearLayout>
 
-                />
+        <LinearLayout
+            android:layout_width="390dp"
+            android:layout_height="250dp"
+            android:background="@drawable/card_profile"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="275dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alef_bold"
+                        android:text="username"
+                        android:textColor="@color/dimblack"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        android:id="@+id/username"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="60dp" />
 
-</LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/storage_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/dimblack"
+                            android:layout_marginRight="12dp"
+                            android:layout_marginLeft="3dp"
+                            android:text="Storage" />
+
+                        <Button
+                            android:id="@+id/camera_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:backgroundTint="@color/dimblack"
+                            android:layout_marginLeft="12dp"
+                            android:text="Camera" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
 </ScrollView>

@@ -292,9 +292,11 @@ public class ProfileFragment extends Fragment {
                         try {
                             Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());
                             List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
-                            tvCountryName.setText(Html.fromHtml("Country : " + (addresses.get(0).getCountryName())));
-                            tvLocality.setText(Html.fromHtml("Locality : " + (addresses.get(0).getLocality())));
-                            tvAddress.setText(Html.fromHtml("Address : " + (addresses.get(0).getAddressLine(0))));
+                            tvCountryName.setText("Country : " + addresses.get(0).getCountryName());
+                            tvLocality.setText("City : " + addresses.get(0).getAdminArea());
+                            String myAddress = addresses.get(0).getAddressLine(0);
+                            String[] outAddress = myAddress.split(", ");
+                            tvAddress.setText("Address : " + outAddress[0]);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }

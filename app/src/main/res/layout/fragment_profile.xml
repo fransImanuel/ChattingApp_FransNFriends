@@ -57,6 +57,25 @@
                         android:layout_marginBottom="10dp"
                         android:layout_marginTop="60dp" />
 
+                    <TextView
+                        android:id="@+id/tvCountryName"
+                        android:layout_width="350dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/tvLocality"
+                        android:layout_width="350dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/tvAddress"
+                        android:layout_width="350dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -93,35 +112,6 @@
                             android:layout_gravity="center"
                             android:backgroundTint="@color/dimblack"
                             android:text="Get Location"/>
-
-                        <LinearLayout
-                            android:id="@+id/layout1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:layout_marginTop="10dp">
-
-                            <TextView
-                                android:id="@+id/tvCountryName"
-                                android:layout_width="350dp"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:hint="test"/>
-                            <TextView
-                                android:id="@+id/tvLocality"
-                                android:layout_width="350dp"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:hint="test"/>
-                            <TextView
-                                android:id="@+id/tvAddress"
-                                android:layout_width="350dp"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:hint="test"/>
-
-                        </LinearLayout>
 
                     </LinearLayout>
 

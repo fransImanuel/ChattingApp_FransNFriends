@@ -4,117 +4,132 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragments.ProfileFragment"
-    android:orientation="vertical"
-    android:padding="8dp">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_marginTop="10dp"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        android:padding="16dp">
+        android:layout_height="400dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/alef_bold"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="15dp"
-            android:text="@string/profile"
-            android:textSize="26sp"
-            android:textStyle="bold"/>
-    </LinearLayout>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
+            android:background="@drawable/gradient"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:id="@+id/test">
+            android:layout_height="350dp"
+            android:orientation="vertical">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="30dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="100dp"
+                android:layout_gravity="center"
                 android:src="@mipmap/ic_launcher"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/alef_bold"
-                android:text="username"
-                android:textColor="@color/dimblack"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:id="@+id/username"
-                app:layout_constraintEnd_toEndOf="@+id/profile_image"
-                app:layout_constraintStart_toStartOf="@+id/profile_image"
-                app:layout_constraintTop_toBottomOf="@+id/profile_image"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="5dp"
+        </LinearLayout>
 
-                />
-            <Button
-                android:id="@+id/btnGetLocation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@+id/profile_image"
-                app:layout_constraintEnd_toEndOf="@+id/profile_image"
-                app:layout_constraintTop_toBottomOf="@+id/username"
-                android:text="Get Location"/>
+        <LinearLayout
+            android:layout_width="390dp"
+            android:layout_height="340dp"
+            android:background="@drawable/card_profile"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="275dp">
 
             <LinearLayout
-                android:id="@+id/layout1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@+id/profile_image"
-                app:layout_constraintEnd_toEndOf="@+id/profile_image"
-                app:layout_constraintTop_toBottomOf="@id/btnGetLocation"
+                android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:layout_marginTop="10dp">
+                android:weightSum="1">
 
-                <TextView
-                    android:id="@+id/tvCountryName"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
-                <TextView
-                    android:id="@+id/tvLocality"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/alef_bold"
+                        android:text="username"
+                        android:textColor="@color/dimblack"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        android:id="@+id/username"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="60dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/storage_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/dimblack"
+                            android:layout_marginRight="12dp"
+                            android:layout_marginLeft="3dp"
+                            android:text="Storage" />
+
+                        <Button
+                            android:id="@+id/camera_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:backgroundTint="@color/dimblack"
+                            android:layout_marginLeft="12dp"
+                            android:text="Camera" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp">
+                        <Button
+                            android:id="@+id/btnGetLocation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:backgroundTint="@color/dimblack"
+                            android:text="Get Location"/>
+
+                        <LinearLayout
+                            android:id="@+id/layout1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_marginTop="10dp">
+
+                            <TextView
+                                android:id="@+id/tvCountryName"
+                                android:layout_width="350dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:hint="test"/>
+                            <TextView
+                                android:id="@+id/tvLocality"
+                                android:layout_width="350dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:hint="test"/>
+                            <TextView
+                                android:id="@+id/tvAddress"
+                                android:layout_width="350dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:hint="test"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
             </LinearLayout>
-            <TextView
-                android:id="@+id/tvAddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@+id/layout1"
-                app:layout_constraintEnd_toEndOf="@+id/layout1"
-                app:layout_constraintTop_toBottomOf="@+id/layout1"
-                android:layout_marginTop="10dp"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
-
-</LinearLayout>
 </ScrollView>

@@ -146,12 +146,17 @@ public class ProfileFragment extends Fragment {
         tvCountryName = view.findViewById(R.id.tvCountryName);
         tvLocality = view.findViewById(R.id.tvLocality);
         tvAddress = view.findViewById(R.id.tvAddress);
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(view.getContext());
 
         btnGetLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getLocation();
+                if(checkGPS()) {
+                    fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(view.getContext());
+                    getLocation();
+                }
+                else {
+                    Toast.makeText(getContext(), "Please turn on GPS", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         return view;
@@ -262,6 +267,7 @@ public class ProfileFragment extends Fragment {
         }
     }
 
+    //juan - location
     private boolean checkGPS(){
         LocationManager lm = (LocationManager)getContext().getSystemService(Context.LOCATION_SERVICE);
         boolean gps_enabled = false;

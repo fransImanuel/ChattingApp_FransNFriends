@@ -58,12 +58,6 @@ public class LoginTabFragment extends Fragment {
         forgot_password.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(400).start();
         btn_login.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(400).start();
 
-        //backend Frans
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setTitle("Login");
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         auth = FirebaseAuth.getInstance();
 
         email = root.findViewById(R.id.email);

@@ -20,10 +20,9 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
-import android.text.Html;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -35,7 +34,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.chattingapp.MainActivity;
 import com.example.chattingapp.Model.User;
 import com.example.chattingapp.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -58,7 +56,6 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -86,6 +83,7 @@ public class ProfileFragment extends Fragment {
 
     private int PERMISSION_CAMERA = 20;
     private int ACCESS_CAMERA = 40;
+    private int MAPS = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -297,12 +295,36 @@ public class ProfileFragment extends Fragment {
                             String myAddress = addresses.get(0).getAddressLine(0);
                             String[] outAddress = myAddress.split(", ");
                             tvAddress.setText("Address : " + outAddress[0]);
-                        } catch (IOException e) {
+                        }
+                        catch (IOException e) {
                             e.printStackTrace();
                         }
                     }
+                    else{
+                        Runnable r = new Runnable() {
+                            @Override
+                            public void run() {
+                                Uri gmmIntentUri = Uri.parse("geo:0,0");
+                                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                                mapIntent.setPackage("com.google.android.apps.maps");
+                                startActivity(mapIntent);
+                            }
+                        };
+                        Handler h = new Handler();
+                        h.postDelayed(r, 1500);
+                        Toast.makeText(getContext(), "Getting your location from maps", Toast.LENGTH_SHORT).show();
+                        MAPS = 1;
+                    }
                 }
             });
+        }
+    }
+
+    public void onResume(){
+        super.onResume();
+        if(MAPS == 1){
+            MAPS = 0;
+            Toast.makeText(getContext(), "Please press get location button again", Toast.LENGTH_SHORT).show();
         }
     }
 }

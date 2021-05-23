@@ -28,7 +28,7 @@
 
         <LinearLayout
             android:layout_width="390dp"
-            android:layout_height="250dp"
+            android:layout_height="340dp"
             android:background="@drawable/card_profile"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="275dp">
@@ -57,6 +57,25 @@
                         android:layout_marginBottom="10dp"
                         android:layout_marginTop="60dp" />
 
+                    <TextView
+                        android:id="@+id/tvCountryName"
+                        android:layout_width="350dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/tvLocality"
+                        android:layout_width="350dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/tvAddress"
+                        android:layout_width="350dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"/>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -81,6 +100,18 @@
                             android:backgroundTint="@color/dimblack"
                             android:layout_marginLeft="12dp"
                             android:text="Camera" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp">
+                        <Button
+                            android:id="@+id/btnGetLocation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:backgroundTint="@color/dimblack"
+                            android:text="Get Location"/>
 
                     </LinearLayout>
 

@@ -226,6 +226,7 @@ public class ProfileFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        //cek jika gambar dari storage
         if (requestCode == IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null){
             imageUri = data.getData();
 
@@ -236,6 +237,7 @@ public class ProfileFragment extends Fragment {
             }
         }
 
+        //cek jika gambar dari kamera
         if (requestCode == ACCESS_CAMERA && resultCode == RESULT_OK){
             Bundle extras = data.getExtras();
             Log.d("PROFILE", "Bundle extras ="+extras);

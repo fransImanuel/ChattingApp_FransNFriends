@@ -16,7 +16,9 @@ import android.widget.Toast;
 
 import com.example.chattingapp.Adapter.LoginAdapter;
 import com.example.chattingapp.Fragments.ChatsFragment;
+import com.example.chattingapp.Fragments.LoginTabFragment;
 import com.example.chattingapp.Fragments.ProfileFragment;
+import com.example.chattingapp.Fragments.RegisterTabFragment;
 import com.example.chattingapp.Fragments.UsersFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -49,7 +51,11 @@ public class LoginActivity extends AppCompatActivity {
         tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
 
         final LoginAdapter adapter = new LoginAdapter(getSupportFragmentManager(), this,tabLayout.getTabCount());
-        viewPager.setAdapter(adapter);
+
+
+        LoginAdapter.addFragment(new LoginTabFragment(), "Login");
+        LoginAdapter.addFragment(new RegisterTabFragment(), "Register");
+
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
@@ -57,6 +63,9 @@ public class LoginActivity extends AppCompatActivity {
         tabLayout.setAlpha(0);
 
         tabLayout.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(400).start();
+
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
 
     }
 }

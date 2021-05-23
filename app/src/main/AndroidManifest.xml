@@ -9,9 +9,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logo_talky"
+        android:icon="@drawable/shortcut"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/shortcut"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChattingApp">
         <activity android:name=".AboutUsActivity"></activity>

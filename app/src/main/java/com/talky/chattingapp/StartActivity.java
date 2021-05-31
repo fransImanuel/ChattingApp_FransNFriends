@@ -1,4 +1,4 @@
-package com.example.chattingapp;
+package com.talky.chattingapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,12 +9,12 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
-import com.example.chattingapp.Fragments.OnBoardingFragment1;
-import com.example.chattingapp.Fragments.OnBoardingFragment2;
-import com.example.chattingapp.Fragments.OnBoardingFragment3;
+import com.talky.chattingapp.Fragments.OnBoardingFragment1;
+import com.talky.chattingapp.Fragments.OnBoardingFragment2;
+import com.talky.chattingapp.Fragments.OnBoardingFragment3;
+import com.talky.chattingapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 

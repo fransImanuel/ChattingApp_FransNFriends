@@ -1,4 +1,4 @@
-package com.example.chattingapp;
+package com.talky.chattingapp;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,10 +16,11 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.chattingapp.Fragments.ChatsFragment;
-import com.example.chattingapp.Fragments.ProfileFragment;
-import com.example.chattingapp.Fragments.UsersFragment;
-import com.example.chattingapp.Model.User;
+import com.talky.chattingapp.Fragments.ChatsFragment;
+import com.talky.chattingapp.Fragments.ProfileFragment;
+import com.talky.chattingapp.Fragments.UsersFragment;
+import com.talky.chattingapp.Model.User;
+import com.talky.chattingapp.R;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

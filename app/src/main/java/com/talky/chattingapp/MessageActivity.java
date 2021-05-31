@@ -1,4 +1,4 @@
-package com.example.chattingapp;
+package com.talky.chattingapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,9 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.chattingapp.Adapter.MessageAdapter;
-import com.example.chattingapp.Model.Chat;
-import com.example.chattingapp.Model.User;
+import com.talky.chattingapp.Adapter.MessageAdapter;
+import com.talky.chattingapp.Model.Chat;
+import com.talky.chattingapp.Model.User;
+import com.talky.chattingapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

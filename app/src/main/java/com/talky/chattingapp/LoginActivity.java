@@ -1,29 +1,17 @@
-package com.example.chattingapp;
+package com.talky.chattingapp;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ListAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.chattingapp.Adapter.LoginAdapter;
-import com.example.chattingapp.Fragments.ChatsFragment;
-import com.example.chattingapp.Fragments.LoginTabFragment;
-import com.example.chattingapp.Fragments.ProfileFragment;
-import com.example.chattingapp.Fragments.RegisterTabFragment;
-import com.example.chattingapp.Fragments.UsersFragment;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.talky.chattingapp.Adapter.LoginAdapter;
+import com.talky.chattingapp.Fragments.LoginTabFragment;
+import com.talky.chattingapp.Fragments.RegisterTabFragment;
+import com.talky.chattingapp.R;
 import com.google.android.material.tabs.TabLayout;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.rengwuxian.materialedittext.MaterialEditText;
 

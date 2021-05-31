@@ -1,4 +1,4 @@
-package com.example.chattingapp.Fragments;
+package com.talky.chattingapp.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.chattingapp.LoginActivity;
-import com.example.chattingapp.R;
+import com.talky.chattingapp.LoginActivity;
+import com.talky.chattingapp.R;
 
 public class OnBoardingFragment1 extends Fragment {
 

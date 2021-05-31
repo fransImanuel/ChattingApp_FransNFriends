@@ -1,4 +1,4 @@
-package com.example.chattingapp.Fragments;
+package com.talky.chattingapp.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,14 +15,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.chattingapp.MainActivity;
-import com.example.chattingapp.R;
-import com.example.chattingapp.ResetPasswordActivity;
+import com.talky.chattingapp.MainActivity;
+import com.talky.chattingapp.R;
+import com.talky.chattingapp.ResetPasswordActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.rengwuxian.materialedittext.MaterialEditText;
 
 
 public class LoginTabFragment extends Fragment {

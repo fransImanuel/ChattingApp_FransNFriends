@@ -1,4 +1,4 @@
-package com.example.chattingapp.Fragments;
+package com.talky.chattingapp.Fragments;
 
 import android.Manifest;
 import android.app.Activity;
@@ -34,8 +34,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.chattingapp.Model.User;
-import com.example.chattingapp.R;
+import com.talky.chattingapp.Model.User;
+import com.talky.chattingapp.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.Continuation;

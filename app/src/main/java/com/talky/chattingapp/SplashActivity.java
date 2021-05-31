@@ -1,20 +1,12 @@
-package com.example.chattingapp;
+package com.talky.chattingapp;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentStatePagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.ImageView;
 
-import com.example.chattingapp.Fragments.OnBoardingFragment1;
-import com.example.chattingapp.Fragments.OnBoardingFragment2;
-import com.example.chattingapp.Fragments.OnBoardingFragment3;
+import com.talky.chattingapp.R;
 
 public class SplashActivity extends AppCompatActivity {
 

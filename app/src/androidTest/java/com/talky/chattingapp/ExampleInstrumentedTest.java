@@ -1,4 +1,4 @@
-package com.example.chattingapp;
+package com.talky.chattingapp;
 
 import android.content.Context;
 

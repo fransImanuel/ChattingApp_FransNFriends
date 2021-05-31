@@ -1,4 +1,4 @@
-package com.example.chattingapp.Model;
+package com.talky.chattingapp.Model;
 
 public class User {
     private String id,

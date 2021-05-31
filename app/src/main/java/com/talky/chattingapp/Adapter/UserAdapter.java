@@ -1,4 +1,4 @@
-package com.example.chattingapp.Adapter;
+package com.talky.chattingapp.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,11 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.chattingapp.MessageActivity;
-import com.example.chattingapp.Model.Chat;
-import com.example.chattingapp.Model.User;
-import com.example.chattingapp.R;
-import com.example.chattingapp.StartActivity;
+import com.talky.chattingapp.MessageActivity;
+import com.talky.chattingapp.Model.Chat;
+import com.talky.chattingapp.Model.User;
+import com.talky.chattingapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -27,8 +26,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
-
-import static androidx.core.content.ContextCompat.startActivity;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
